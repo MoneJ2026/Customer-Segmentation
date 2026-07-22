@@ -1,13 +1,34 @@
 from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
 
 
-def train_model(X):
+def elbow_method(X):
 
-    model = KMeans(
-        n_clusters=5,
-        random_state=42
-    )
+    errors = []
 
-    model.fit(X)
+    for k in range(1, 11):
 
-    return model
+        model = KMeans(
+            n_clusters=k,
+            random_state=42
+        )
+
+        model.fit(X)
+
+        errors.append(model.inertia())
+
+    plt.figure(figsize=(8,5))
+
+    plt.plot(range(1,11), errors, marker="o")
+
+    plt.xlabel("Clusters")
+
+    plt.ylabel("Inertia")
+
+    plt.title("Elbow Method")
+
+    plt.grid(True)
+
+    plt.savefig("images/elbow.png")
+
+    plt.show()
