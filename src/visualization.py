@@ -9,16 +9,13 @@ def plot_clusters(df):
         df["Income"],
         df["SpendingScore"],
         c=df["Cluster"],
-        s=80
+        cmap="rainbow",
+        s=100
     )
 
     plt.xlabel("Income")
-
     plt.ylabel("Spending Score")
-
     plt.title("Customer Segmentation")
-
-    plt.grid(True)
 
     plt.savefig("images/result.png")
 

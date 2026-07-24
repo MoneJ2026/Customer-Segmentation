@@ -3,7 +3,8 @@ from sklearn.preprocessing import StandardScaler
 
 
 def load_data(path):
-    return pd.read_csv(path)
+    df = pd.read_csv(path)
+    return df
 
 
 def preprocess(df):
@@ -11,6 +12,6 @@ def preprocess(df):
 
     scaler = StandardScaler()
 
-    X_scaled = scaler.fit_transform(X)
+    X = scaler.fit_transform(X)
 
-    return X_scaled
+    return X
