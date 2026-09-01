@@ -11,7 +11,6 @@ os.makedirs("output", exist_ok=True)
 df = load_data("data/customers.csv")
 
 basic_info(df)
-
 X = preprocess(df)
 
 elbow_method(X)
