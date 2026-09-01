@@ -1,8 +1,6 @@
 
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
-
-
 def elbow_method(X):
 
     errors = []
@@ -14,11 +12,8 @@ def elbow_method(X):
             random_state=42,
             n_init=10
         )
-
         model.fit(X)
-
         errors.append(model.inertia_)
-
     plt.figure(figsize=(8, 5))
 
     plt.plot(

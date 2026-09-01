@@ -11,9 +11,9 @@ class Customer:
             f"ID: {self.customer_id}, "
             f"Age: {self.age}, "
             f"Income: {self.income}, "
-            f"Spending Score: {self.spending_score}"
-        )
-
+            f"Spending Score: {self.spending_score}")git status
+            
+    
 
 customers = [
     Customer(1, 19, 15000, 39),

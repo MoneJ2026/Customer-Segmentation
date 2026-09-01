@@ -6,11 +6,8 @@ from src.visualization import plot_clusters
 from src.evaluation import evaluate_model
 from src.eda import basic_info
 
-
 os.makedirs("images", exist_ok=True)
 os.makedirs("output", exist_ok=True)
-
-
 df = load_data("data/customers.csv")
 
 basic_info(df)
@@ -29,7 +26,5 @@ plot_clusters(df)
 
 df.to_csv(
     "output/customer_clusters.csv",
-    index=False
-)
-
+    index=False)
 print("\nProject Finished Successfully ✅")
